@@ -29,5 +29,7 @@ jobs:
       run: npm test
     - name: Invoke coveralls
       uses: coverallsapp/github-action@v2
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
