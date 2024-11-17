@@ -15,6 +15,9 @@ test('sums string correctly', () => {
 test('when other number is missing should return the one that is given', () => {
     expect(add(1)).toBe(1)
 })
+test('undefined as other parameter should return the other that is given', () => {
+    expect(add(undefined, 3)).toBe(3)
+})
 test('without any parameters should return zero', () => {
     expect(add()).toBe(0)
 })
@@ -27,4 +30,5 @@ test('with infinity should return infinity', () => {
 test('array in parameter should return NaN', () => {
     expect(add([1,2], 3)).toBe(NaN)
 })
+
 
