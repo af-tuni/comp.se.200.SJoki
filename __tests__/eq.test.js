@@ -21,7 +21,7 @@ test('two numbers are equal, should return true', () => {
     expect(eq(1, 1)).toBe(true);
 })
 
-// in == equalization, javascript always converts parameters to same type automatically before comparing
+// in == equalization, javascript always converts parameters to same type automatically before comparing them
 test('tests with string that seems to be number and a number, should return true', () => {
     expect(eq("5", 5)).toBe(true);
 })
