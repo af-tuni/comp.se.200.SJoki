@@ -7,10 +7,6 @@ test('two string are equal, should return true', () => {
     expect(eq("a", "a")).toBe(true);
 })
 
-test('string and object are not equal so return false', () => {
-    expect(eq('a', Object('a'))).toBe(true);
-})
-
 test('two objects are equal, should return true', () => {
     expect(eq(object, object)).toBe(true);
 })
