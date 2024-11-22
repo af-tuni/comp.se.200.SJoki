@@ -7,6 +7,10 @@ test('two string are equal, should return true', () => {
     expect(eq("a", "a")).toBe(true);
 })
 
+test('string and object are not equal so return false', () => {
+    expect(eq('a', Object('a'))).toBe(true);
+})
+
 test('two objects are equal, should return true', () => {
     expect(eq(object, object)).toBe(true);
 })
@@ -47,4 +51,6 @@ test('test with arrays, should return true', () => {
     const arr = [1, 2, 3];
     expect(eq(arr, arr)).toBe(true);
 })
-
+test('returns true for NaN comparison', () => {
+    expect(eq(NaN, NaN)).toBe(true);
+  });
