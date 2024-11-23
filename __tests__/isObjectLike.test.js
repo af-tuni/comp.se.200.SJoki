@@ -3,6 +3,11 @@ import isObjectLike from "../src/isObjectLike";
 test('returns empty object as true', () => {
     expect(isObjectLike({})).toBe(true);
 })
+
+test('returns not empty object as true', () => {
+    expect(isObjectLike({"testi": 2})).toBe(true);
+})
+
 test('returns array as true', () => {
     expect(isObjectLike([1,2,3])).toBe(true);
 })
