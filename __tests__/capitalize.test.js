@@ -33,7 +33,26 @@ test('capitalize string with uppercase already in first letter', () => {
     expect(capitalize("Product product")).toBe("Product product");
 })
 
+// Edge case testing
+
 test('works with a large string', () => {
     const largeString = 'a'.repeat(1_000_000);
     expect(capitalize(largeString)).toBe('A' + 'a'.repeat(999_999));
+})
+
+test('capitalize empty as Undefined string', () => {
+    expect(capitalize()).toBe("Undefined");
+})
+
+// Negative testing
+
+test('capitalize object as [object object] string', () => {
+    expect(capitalize({"1": 2})).toBe("[object object]");
+})
+
+test('capitalizing Function should return "Function anonymous(){}" string', () => {
+    expect(capitalize(new Function())).toBe(`Function anonymous(
+) {
+
+}`);
 })

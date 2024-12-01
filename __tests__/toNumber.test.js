@@ -14,6 +14,10 @@ test('converts number to number correctly', () => {
 test('converts negative number to number correctly', () => {
     expect(toNumber(-4.2)).toBe(-4.2);
 })
+
+
+//Edge case testing
+
 test('converts Infinity to Infinity correctly', () => {
     expect(toNumber(Infinity)).toBe(Infinity);
 })
@@ -29,5 +33,5 @@ test('object as parameter returns NaN', () => {
 })
 
 test('function as parameter returns NaN', () => {
-    expect(toNumber(Function)).toBe(NaN);
+    expect(toNumber(new Function())).toBe(NaN);
 })
