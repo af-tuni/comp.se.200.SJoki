@@ -27,6 +27,35 @@ test('returns empty function as true', () => {
     expect(isEmpty(function myFunction(){})).toBe(true);
 })
 
+test('returns one integer as true', () => {
+    expect(isEmpty(1)).toBe(true);
+})
+
+test('returns string as false', () => {
+    expect(isEmpty('abc')).toBe(false);
+})
+
+test('returns null as true', () => {
+    expect(isEmpty(null)).toBe(true);
+})
+
+test('returns true as true', () => {
+    expect(isEmpty(true)).toBe(true);
+})
+
+test('returns empty argument as true', () => {
+    expect(isEmpty(function() { return arguments }())).toBe(true);
+})
+
+test('returns empty buffer as true', () => {
+    expect(isEmpty(Buffer.alloc(0))).toBe(true);
+})
+
+test('returns empty typed array as true', () => {
+    expect(isEmpty(new Uint8Array)).toBe(true);
+})
+
+
 
 
 // Edge case testing

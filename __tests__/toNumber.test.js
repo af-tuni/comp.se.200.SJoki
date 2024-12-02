@@ -5,6 +5,12 @@ import toNumber from "../src/toNumber";
 test('converts string to number correctly', () => {
     expect(toNumber("4.2")).toBe(4.2);
 })
+test('converts octal string to number correctly', () => {
+    expect(toNumber("0o52")).toBe(42);
+})
+test('converts binary string to number correctly', () => {
+    expect(toNumber("0b101010")).toBe(42);
+})
 test('converts string with negative number to number correctly', () => {
     expect(toNumber("-4.2")).toBe(-4.2);
 })

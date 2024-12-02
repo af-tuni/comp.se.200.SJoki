@@ -16,3 +16,26 @@ test('converts prices with sale correctly', () => {
 test('converts string results NaN', () => {
     expect(map("a", saleFunction)).toStrictEqual([NaN]);
 })
+
+
+//Edge case testing
+
+test('converts prices with empty array', () => {
+    expect(map([], saleFunction)).toStrictEqual([]);
+})
+
+test('converts prices with big array', () => {
+
+    const largeArray = Array(1_00_000).fill(1); // array of 100k ones
+    expect(map(largeArray, saleFunction)).toStrictEqual(Array(1_00_000).fill(0.5));
+})
+
+//Negative testing
+
+test('converts prices with undefined array should return an empty array', () => {
+    expect(map(undefined, saleFunction)).toStrictEqual([]);
+})
+
+test('convert prices with no function should not result in error', () => {
+    expect(map(initialPrizes)).toStrictEqual([]);
+})

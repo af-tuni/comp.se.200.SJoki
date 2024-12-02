@@ -51,6 +51,10 @@ test('tests with big values', () => {
     expect(eq(10**6, 10**6)).toBe(true);
 })
 
+test('tests with no values', () => {
+    expect(eq()).toBe(true);
+})
+
 test('tests with infinity', () => {
     expect(eq(1, Infinity)).toBe(false);
     expect(eq(Infinity, Infinity)).toBe(true);

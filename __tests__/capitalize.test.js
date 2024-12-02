@@ -17,6 +17,10 @@ test('capitalize number correctly (do nothing)', () => {
     expect(capitalize(1)).toBe("1");
 })
 
+test('capitalize unicode symbols correctly (do nothing)', () => {
+    expect(capitalize("\uD83C\uDF0D\uD83D\uDE0A")).toBe("\uD83C\uDF0D\uD83D\uDE0A");
+})
+
 test('capitalize string with special character as first character correctly (do nothing)', () => {
     expect(capitalize("!product")).toBe("!product");
 })
